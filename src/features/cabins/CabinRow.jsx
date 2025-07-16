@@ -42,7 +42,7 @@ function CabinRow({ cabin }) {
   const { isCreating, createCabin } = useCreateCabin();
 
   const {
-    id: cabinID,
+    id: cabinId,
     name,
     maxCapacity,
     regularPrice,
@@ -76,9 +76,9 @@ function CabinRow({ cabin }) {
       <div>
         <Modal>
           <Menus.Menu>
-            <Menus.Toggle id={cabinID} />
+            <Menus.Toggle id={cabinId} />
 
-            <Menus.List id={cabinID}>
+            <Menus.List id={cabinId}>
               <Menus.Button icon={<HiSquare2Stack />} onClick={handleDuplicate}>
                 Duplicate
               </Menus.Button>
@@ -100,7 +100,7 @@ function CabinRow({ cabin }) {
               <ConfirmDelete
                 resourceName="cabins"
                 disabled={isDeleting}
-                onConfirm={() => deleteCabin(cabinID)}
+                onConfirm={() => deleteCabin(cabinId)}
               />
             </Modal.Window>
           </Menus.Menu>
